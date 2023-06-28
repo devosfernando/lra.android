@@ -1,0 +1,120 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.fcmpushnotification'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.fcmpushnotification"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10'
+        }
+    }
+
+
+}
+
+dependencies {
+
+    //implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
+    //implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    //implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    //implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    //implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    //androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    //androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    //LIBRERIA ANTIGUA
+    //implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    //LIBRERIA NUEVA
+    implementation platform('com.google.firebase:firebase-bom:31.5.0')
+    //LIBRERIA ANTIGUA
+    //implementation 'com.google.firebase:firebase-analytics-ktx'
+    //LIBRERIA NUEVA
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.2'
+    //LIBRERIA ANTIGUA
+    //implementation 'com.google.firebase:firebase-messaging-ktx:23.1.1'
+    //LIBRERIA NUEVA
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.1.2'
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    //LIBRERIA ANTIGUA
+    //implementation 'com.google.firebase:firebase-auth-ktx'
+    //LIBRERIA NUEVA
+    implementation 'com.google.firebase:firebase-auth-ktx:21.3.0'
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    //LIBRERIA ANTIGUA
+    //implementation 'com.google.firebase:firebase-auth'
+    //LIBRERIA NUEVA
+    implementation 'com.google.firebase:firebase-auth:21.3.0'
+
+    // Also add the dependency for the Google Play services library and specify its version
+    //LIBRERIA ANTOGUA
+    //implementation 'com.google.android.gms:play-services-auth:20.4.0'
+    //LIBRERIA NUEVA
+    implementation 'com.google.android.gms:play-services-auth:20.5.0'
+
+    //IMPLEMENTACIÓN PARA GRAFICAS DE AGUJA
+    implementation 'com.github.Gruzer:simple-gauge-android:0.3.1'
+    //implementation 'com.github.Gruzer:simple-gauge-android'
+
+    //IMPLEMENTACION LIBRERIA PARA CONSUMIR SERVICIOS REST
+    implementation 'com.android.volley:volley:1.2.1'
+
+    //GSON
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    //MPANDROID GRAFICAR BARRAS
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //BOTON TIPO INTERRUPTOR
+    //implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+
+}
